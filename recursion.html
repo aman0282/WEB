@@ -1,0 +1,661 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!--Complete karo -->
+        <div class="nav-bar"></div> 
+
+
+        <div class="d-flex h-100">
+            <div id="leftcontainer" class="h-100">
+                <ul>
+                   <a href="searching.html"><li>searching and sorting</li></a>
+                   <a href="array.html"><li>arrays</li></a>
+                   <a href="#"><li>trees</li></a>
+                   <a href="#"><li>graphs</li></a>
+                   <a href="stack.html"><li>stack</li></a>
+                   <a href="string.html"><li>strings</li></a>
+                   <a href="2d.html"><li>2d-arrays</li></a>
+                   <a href="linked list.html"><li>linked list</li></a>
+                   <a href="queue.html"><li>Queue</li></a>
+                   <a href="recursion.html"><li>Recursion</li></a>
+                </ul>
+            </div>
+            <div id="rightcontainer" class="w-100">
+                <div class="programs w-100" id="Recursion">
+                    <h2 class="heading t-head">Recursion</h2>
+                    <h2 class="heading">CALCULATE FACTORIAL OF A NUMBER USING RECURSION</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+      
+                            int factorial(int num)
+                            {
+                                if (num==0 || num ==1)
+                                {
+                                    return 1;
+                                }
+                                else
+                                return num*factorial(num-1);
+                            }
+                            void main()
+                            {
+                                int num;
+                                printf("Enter Number\n");
+                                scanf("%d",&num);
+                                printf("Factorial of %d is %d",num,factorial(num));
+                            }                
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Number
+3
+Factorial of 3 is 6
+                    </pre>
+                    <h2 class="heading">CALCULATE FIBONACCI OF A NUMBER USING RECURSION</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+      
+                            int fabonacci(int pre,int cur,int next,int num)
+                            {
+                                if (num>0)
+                                {
+                                    next=cur+pre;
+                                    pre=cur;
+                                    cur=next;
+                                    printf("%d ",next);
+                                    return fabonacci(pre,cur,next,num-1);
+                                }
+                            }
+                            void main()
+                            {
+                                int cur=1,next,pre=0,num;
+                                printf("Enter Number\n");
+                                scanf("%d",&num);
+                                if (num==1)
+                                {
+                                    printf("%d",pre);
+                                }
+                                
+                                    printf(" %d %d ",pre,cur);
+                                  fabonacci(pre,cur,next,num-2);
+                                
+                            }
+                      
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Number
+4
+0 1 1 2 
+                    </pre>
+                    <h2 class="heading">CALCULATE THE SUM OF NATURAL NUMBERS TILL 10 USING RECURSION.</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+
+                            int sum(int num)
+                            {
+                                if (num==0)
+                                {
+                                    return 0;
+                                }
+                                
+                                    return num+sum(num-1); 
+                            }
+                            void main()
+                            {
+                                int num =10;
+                                printf("SUM OF 10 NATURAL NUMBERS %d",sum(num));
+                            }
+                      
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+                    SUM OF 10 NATURAL NUMBERS 55
+                    </pre>
+                    <h2 class="heading"> CONVERT A NUMBER INTO BINARY USING RECURSION</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+
+                            void decimalToBinary(int n) {
+                                if (n > 0) {
+                                    decimalToBinary(n / 2); 
+                                    printf("%d", n % 2);    // Print the remainder (binary digit)
+                                }
+                            }
+                            
+                            int main() {
+                                int decimalNumber ; 
+                                printf("Enter Decimal Number\n");
+                                scanf("%d",&decimalNumber);
+                                printf("Binary representation of %d is: ", decimalNumber);
+                                decimalToBinary(decimalNumber);
+                                printf("\n");
+                            
+                                return 0;
+                            }
+                            
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Decimal Number
+23.55
+Binary representation of 23 is: 10111
+                    </pre>
+                    <h2 class="heading">FIND THE LARGEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+      
+
+                            void getArray(int arr[],int s)
+                            {
+                                int i,j;
+                                printf("Enter Value of Array\n");
+                                for ( i = 0; i < s; i++)
+                                {
+                                    scanf("%d",&arr[i]);
+                                }
+                                
+                            }
+                            int findMax(int arr[], int n, int max) {
+                                if (n == 0) {
+                                    return max;
+                                }
+                            
+                                if (arr[n - 1] > max) {
+                                    max = arr[n - 1];
+                                }
+                            
+                                return findMax(arr, n - 1, max);
+                            }
+                            6
+                            int main() {
+                                int arr[10] ,s=10;
+                                getArray(arr,s);    
+                                int largest = findMax(arr, s, arr[0]);
+                                printf("The largest element in the array is: %d\n", largest);
+                            
+                                return 0;
+                            }
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+Enter Value of Array
+6
+7
+8
+8
+9
+1
+23
+55
+0
+5
+The largest element in the array is: 55
+                            </pre>
+                            <h2 class="heading">FIND THE SMALLEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</h2>
+                            <pre>
+                                #include&lt;stdio.h&gt;
+      
+                                    void getArray(int arr[],int s)
+                                    {
+                                        int i,j;
+                                        printf("Enter Value of Array\n");
+                                        for ( i = 0; i < s; i++)
+                                        {
+                                            scanf("%d",&arr[i]);
+                                        }
+                                        
+                                    }
+                                    int findmin(int arr[], int n, int min) {
+                                        if (n == 0) {
+                                            return min;
+                                        }
+                                    
+                                        if (arr[n - 1] < min) {
+                                            min = arr[n - 1];
+                                        }
+                                    
+                                        return findmin(arr, n - 1, min);
+                                    }
+                                    
+                                    int main() {
+                                        int arr[10] ,s=10;
+                                        getArray(arr,s);    
+                                        int smallest = findmin(arr, s, arr[0]);
+                                        printf("The smallest element in the array is: %d\n", smallest);
+                                    
+                                        return 0;
+                                    }
+                                    
+                                      
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+                                Enter Value of Array
+                                1
+                                12
+                                3
+                                34
+                                5
+                                56
+                                7
+                                0
+                                32
+                                45
+                                The smallest element in the array is: 0    
+                            </pre>
+                            <h2 class="heading"> ENTER THE NUMBER FROM THE USER AND ADD ALL DIGITS OF THE NUMBER USING RECURSION.</h2>
+                            <pre>
+                                #include&lt;stdio.h&gt;
+
+                                    int sumOfDigits(int num) {
+                                        if (num == 0) {
+                                            return 0;
+                                        } else {
+                                            return num % 10 + sumOfDigits(num / 10);
+                                        }
+                                    }
+                                    
+                                    int main() {
+                                        int number;
+                                        
+                                        printf("Enter a number: ");
+                                        scanf("%d", &number);
+                                    
+                                        int sum = sumOfDigits(number);
+                                    
+                                        printf("The sum of the digits of %d is %d\n", number, sum);
+                                    
+                                        return 0;
+                                    }
+                                    
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+                                Enter a number: 1234
+                                The sum of the digits of 1234 is 10   
+                            </pre>
+                            <h2 class="heading">FIND THE ARITHMETIC MEAN OF AN INTEGER ARRAY USING RECURSION.</h2>
+                            <pre>
+                                #include&lt;stdio.h&gt;
+
+                                    void getArray(int arr[],int s)
+                                    {
+                                        int i,j;
+                                        printf("Enter Value of Array\n");
+                                        for ( i = 0; i < s; i++)
+                                        {
+                                            scanf("%d",&arr[i]);
+                                        }
+                                        
+                                    }
+                                    double Mean(int arr[], int n, int index, double sum) {
+                                        if (index == n) {
+                                            return sum / n;
+                                        }
+                                        
+                                        sum += arr[index];
+                                        
+                                        return Mean(arr, n, index + 1, sum);
+                                    }
+                                    
+                                    int main() {
+                                        int arr[10],s=10;
+                                        getArray(arr,s);
+                                        double mean = Mean(arr, s, 0, 0.0);
+                                        printf("The arithmetic mean of the array is: %.2lf\n", mean);
+                                    
+                                        return 0;
+                                    }
+                                
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+Enter Value of Array
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+The arithmetic mean of the array is: 5.50
+=======
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!--Complete karo -->
+        <div class="nav-bar"></div> 
+
+
+        <div class="d-flex h-100">
+            <div id="leftcontainer" class="h-100">
+                <ul>
+                   <a href="searching.html"><li>searching and sorting</li></a>
+                   <a href="array.html"><li>arrays</li></a>
+                   <a href="#"><li>trees</li></a>
+                   <a href="#"><li>graphs</li></a>
+                   <a href="stack.html"><li>stack</li></a>
+                   <a href="string.html"><li>strings</li></a>
+                   <a href="2d.html"><li>2d-arrays</li></a>
+                   <a href="linked list.html"><li>linked list</li></a>
+                   <a href="queue.html"><li>Queue</li></a>
+                   <a href="recursion.html"><li>Recursion</li></a>
+                </ul>
+            </div>
+            <div id="rightcontainer" class="w-100">
+                <div class="programs w-100" id="Recursion">
+                    <h2 class="heading t-head">Recursion</h2>
+                    <h2 class="heading">CALCULATE FACTORIAL OF A NUMBER USING RECURSION</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+      
+                            int factorial(int num)
+                            {
+                                if (num==0 || num ==1)
+                                {
+                                    return 1;
+                                }
+                                else
+                                return num*factorial(num-1);
+                            }
+                            void main()
+                            {
+                                int num;
+                                printf("Enter Number\n");
+                                scanf("%d",&num);
+                                printf("Factorial of %d is %d",num,factorial(num));
+                            }                
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Number
+3
+Factorial of 3 is 6
+                    </pre>
+                    <h2 class="heading">CALCULATE FIBONACCI OF A NUMBER USING RECURSION</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+      
+                            int fabonacci(int pre,int cur,int next,int num)
+                            {
+                                if (num>0)
+                                {
+                                    next=cur+pre;
+                                    pre=cur;
+                                    cur=next;
+                                    printf("%d ",next);
+                                    return fabonacci(pre,cur,next,num-1);
+                                }
+                            }
+                            void main()
+                            {
+                                int cur=1,next,pre=0,num;
+                                printf("Enter Number\n");
+                                scanf("%d",&num);
+                                if (num==1)
+                                {
+                                    printf("%d",pre);
+                                }
+                                
+                                    printf(" %d %d ",pre,cur);
+                                  fabonacci(pre,cur,next,num-2);
+                                
+                            }
+                      
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Number
+4
+0 1 1 2 
+                    </pre>
+                    <h2 class="heading">CALCULATE THE SUM OF NATURAL NUMBERS TILL 10 USING RECURSION.</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+
+                            int sum(int num)
+                            {
+                                if (num==0)
+                                {
+                                    return 0;
+                                }
+                                
+                                    return num+sum(num-1); 
+                            }
+                            void main()
+                            {
+                                int num =10;
+                                printf("SUM OF 10 NATURAL NUMBERS %d",sum(num));
+                            }
+                      
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+                    SUM OF 10 NATURAL NUMBERS 55
+                    </pre>
+                    <h2 class="heading"> CONVERT A NUMBER INTO BINARY USING RECURSION</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+
+                            void decimalToBinary(int n) {
+                                if (n > 0) {
+                                    decimalToBinary(n / 2); 
+                                    printf("%d", n % 2);    // Print the remainder (binary digit)
+                                }
+                            }
+                            
+                            int main() {
+                                int decimalNumber ; 
+                                printf("Enter Decimal Number\n");
+                                scanf("%d",&decimalNumber);
+                                printf("Binary representation of %d is: ", decimalNumber);
+                                decimalToBinary(decimalNumber);
+                                printf("\n");
+                            
+                                return 0;
+                            }
+                            
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Decimal Number
+23.55
+Binary representation of 23 is: 10111
+                    </pre>
+                    <h2 class="heading">FIND THE LARGEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</h2>
+                    <pre>
+                        #include&lt;stdio.h&gt;
+      
+
+                            void getArray(int arr[],int s)
+                            {
+                                int i,j;
+                                printf("Enter Value of Array\n");
+                                for ( i = 0; i < s; i++)
+                                {
+                                    scanf("%d",&arr[i]);
+                                }
+                                
+                            }
+                            int findMax(int arr[], int n, int max) {
+                                if (n == 0) {
+                                    return max;
+                                }
+                            
+                                if (arr[n - 1] > max) {
+                                    max = arr[n - 1];
+                                }
+                            
+                                return findMax(arr, n - 1, max);
+                            }
+                            6
+                            int main() {
+                                int arr[10] ,s=10;
+                                getArray(arr,s);    
+                                int largest = findMax(arr, s, arr[0]);
+                                printf("The largest element in the array is: %d\n", largest);
+                            
+                                return 0;
+                            }
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+Enter Value of Array
+6
+7
+8
+8
+9
+1
+23
+55
+0
+5
+The largest element in the array is: 55
+                            </pre>
+                            <h2 class="heading">FIND THE SMALLEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</h2>
+                            <pre>
+                                #include&lt;stdio.h&gt;
+      
+                                    void getArray(int arr[],int s)
+                                    {
+                                        int i,j;
+                                        printf("Enter Value of Array\n");
+                                        for ( i = 0; i < s; i++)
+                                        {
+                                            scanf("%d",&arr[i]);
+                                        }
+                                        
+                                    }
+                                    int findmin(int arr[], int n, int min) {
+                                        if (n == 0) {
+                                            return min;
+                                        }
+                                    
+                                        if (arr[n - 1] < min) {
+                                            min = arr[n - 1];
+                                        }
+                                    
+                                        return findmin(arr, n - 1, min);
+                                    }
+                                    
+                                    int main() {
+                                        int arr[10] ,s=10;
+                                        getArray(arr,s);    
+                                        int smallest = findmin(arr, s, arr[0]);
+                                        printf("The smallest element in the array is: %d\n", smallest);
+                                    
+                                        return 0;
+                                    }
+                                    
+                                      
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+                                Enter Value of Array
+                                1
+                                12
+                                3
+                                34
+                                5
+                                56
+                                7
+                                0
+                                32
+                                45
+                                The smallest element in the array is: 0    
+                            </pre>
+                            <h2 class="heading"> ENTER THE NUMBER FROM THE USER AND ADD ALL DIGITS OF THE NUMBER USING RECURSION.</h2>
+                            <pre>
+                                #include&lt;stdio.h&gt;
+
+                                    int sumOfDigits(int num) {
+                                        if (num == 0) {
+                                            return 0;
+                                        } else {
+                                            return num % 10 + sumOfDigits(num / 10);
+                                        }
+                                    }
+                                    
+                                    int main() {
+                                        int number;
+                                        
+                                        printf("Enter a number: ");
+                                        scanf("%d", &number);
+                                    
+                                        int sum = sumOfDigits(number);
+                                    
+                                        printf("The sum of the digits of %d is %d\n", number, sum);
+                                    
+                                        return 0;
+                                    }
+                                    
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+                                Enter a number: 1234
+                                The sum of the digits of 1234 is 10   
+                            </pre>
+                            <h2 class="heading">FIND THE ARITHMETIC MEAN OF AN INTEGER ARRAY USING RECURSION.</h2>
+                            <pre>
+                                #include&lt;stdio.h&gt;
+
+                                    void getArray(int arr[],int s)
+                                    {
+                                        int i,j;
+                                        printf("Enter Value of Array\n");
+                                        for ( i = 0; i < s; i++)
+                                        {
+                                            scanf("%d",&arr[i]);
+                                        }
+                                        
+                                    }
+                                    double Mean(int arr[], int n, int index, double sum) {
+                                        if (index == n) {
+                                            return sum / n;
+                                        }
+                                        
+                                        sum += arr[index];
+                                        
+                                        return Mean(arr, n, index + 1, sum);
+                                    }
+                                    
+                                    int main() {
+                                        int arr[10],s=10;
+                                        getArray(arr,s);
+                                        double mean = Mean(arr, s, 0, 0.0);
+                                        printf("The arithmetic mean of the array is: %.2lf\n", mean);
+                                    
+                                        return 0;
+                                    }
+                                
+                            </pre>
+                            <h2 class="heading">output</h2>
+                            <pre>
+Enter Value of Array
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+The arithmetic mean of the array is: 5.50
+>>>>>>> 6f41ef0cff85b3fdb0907aa23d858f28cfae54b5
+                            </pre>

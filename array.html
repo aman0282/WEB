@@ -1,0 +1,1068 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!--Complete karo -->
+        <div class="nav-bar"></div> 
+
+
+        <div class="d-flex h-100">
+            <div id="leftcontainer" class="h-100">
+                <ul>
+                   <a href="searching.html"><li>searching and sorting</li></a>
+                   <a href="array.html"><li>arrays</li></a>
+                   <a href="#"><li>trees</li></a>
+                   <a href="#"><li>graphs</li></a>
+                   <a href="stack.html"><li>stack</li></a>
+                   <a href="string.html"><li>strings</li></a>
+                   <a href="2d.html"><li>2d-arrays</li></a>
+                   <a href="linked list.html"><li>linked list</li></a>
+                   <a href="queue.html"><li>Queue</li></a>
+                   <a href="recursion.html"><li>Recursion</li></a>
+                </ul>
+            </div>
+            <div id="rightcontainer" class="w-100">
+                <div class="programs w-100" id="Arrays">
+                    <h2 class="heading t-head">Arrays</h2>
+                    <h2 class="heading">Enter an array from user and display all the value ?</h2>
+                    <pre>
+    #include &lt;stdio.h&gt;
+    int main(){
+        int arr[5], i;
+        for (i = 0; i < 5; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+        for (i = 0; i < 5; i++)
+        {
+              printf("Value at position %d is %d\n", i+1, arr[i]);
+        }
+        return 0;
+    }
+                    </pre>
+                    <h2 class="heading">Output</h2>
+                    <pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+22
+Enter Value of position 3
+3
+Enter Value of position 4
+44
+Enter Value of position 5
+55
+Value at position 1 is 1
+Value at position 2 is 22
+Value at position 3 is 3
+Value at position 4 is 44
+Value at position 5 is 55
+
+     </pre>
+
+                    <H2 class="heading" >Enter an array from user and print the array in reverse order ?</H2>
+                    <pre>
+    #include &lt;stdio.h&gt;
+   
+    int main(){
+        int arr[5], i;
+        for (i = 0; i < 5; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+        printf("Printing Array in Reverse Order\n");
+        for (i = 4; i >= 0; i--)
+        {
+              printf("Value at position %d is %d\n", i+1, arr[i]);
+        }
+        return 0;
+    }
+                    </pre>
+                    <h2 class="heading" >output</h2>
+                    <pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+8
+Enter Value of position 5
+7
+Printing Array in Reverse Order
+Value at position 5 is 7
+Value at position 4 is 8
+Value at position 3 is 3
+Value at position 2 is 2
+Value at position 1 is 1
+                        
+                    </pre>
+
+                    <h2 class="heading"> Enter an array from user and copy the array into second array?</h2>
+                    <pre>
+    #include &lt;stdio.h&gt;
+    int main(){
+        int arr[10], i, arrcpy[10];
+        for (i = 0; i < 10; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+    
+        for (i = 0; i < 10; i++)
+        {
+            arrcpy[i] = arr[i];
+        }
+        
+        printf("Printing Copied Array Values\n");
+        for (i = 0; i < 10; i++)
+        {
+              printf("Value at position %d is %d\n", i+1, arrcpy[i]);
+        }
+        return 0;
+    }
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+55
+Enter Value of position 6
+77
+Enter Value of position 7
+88
+Enter Value of position 8
+99
+Enter Value of position 9
+100
+Enter Value of position 10
+121
+Printing Copied Array Values
+Value at position 1 is 1
+Value at position 2 is 2
+Value at position 3 is 3
+Value at position 4 is 4
+Value at position 5 is 55
+Value at position 6 is 77
+Value at position 7 is 88
+Value at position 8 is 99
+Value at position 9 is 100
+Value at position 10 is 121
+                                                                                                                                              
+                    </pre>
+
+                    <h2 class="heading"> Enter an array from user and copy it into another array in reverse order?</h2>
+                    <pre>
+    #include &lt;stdio.h&gt;
+   
+
+        int main(){
+            int arr[10], i,arrcpy[10];
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+        
+            for (i = 0; i < 10; i++)
+            {
+                arrcpy[9-i] = arr[i];
+            }
+            printf("Printing Copied Array Values\n");
+            for (i = 0; i < 10; i++)
+            {
+                  printf("Value at position %d is %d\n", i+1, arrcpy[i]);
+            }
+            return 0;
+        }
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Enter Value of position 6
+6
+Enter Value of position 7
+7
+Enter Value of position 8
+8
+Enter Value of position 9
+99
+Enter Value of position 10
+100
+Printing Copied Array Values
+Value at position 1 is 100
+Value at position 2 is 99
+Value at position 3 is 8
+Value at position 4 is 7
+Value at position 5 is 6
+Value at position 6 is 5
+Value at position 7 is 4
+Value at position 8 is 3
+Value at position 9 is 2
+Value at position 10 is 1
+                                                    
+                    </pre>
+                   <h2 class="heading"> Enter an array from user and print the number which is even ?</h2>
+
+                    <pre>
+    #include &lt;stdio.h&gt;
+    int main(){
+        int arr[5], i;
+        for (i = 0; i < 5; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+        printf("Even Values Are\n");
+        for (i = 0; i < 5; i++)
+        {
+            if (arr[i] %2 == 0)
+                printf("%d\n", arr[i]); 
+        }
+        return 0;
+    }
+          </pre>
+                    <h2 class="heading">Output</h2>
+                    <pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Even Values Are
+2
+4
+ </pre>
+                    <h2 class="heading">Enter an array from user and print the number which is positive ?</h2>
+                    <pre>
+    #include &lt;stdio.h&gt;
+    int main(){
+        int arr[5], i;
+        for (i = 0; i < 5; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+        printf("positive Values Are\n");
+        for (i = 0; i < 5; i++)
+        {
+            if (arr[i] > 0)
+                printf("%d\n", arr[i]); 
+        }
+        return 0;
+    }
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Value of position 1
+-1
+Enter Value of position 2
+2
+Enter Value of position 3
+-2
+Enter Value of position 4
+5
+Enter Value of position 5
+8
+positive Values Are
+2
+5
+8
+</pre>
+                   <h2 class="heading" >Enter an array from user and square all the values of array ? </h2>
+                    <pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int arr[5], i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("Enter Value of position %d\n", i+1);
+        scanf("%d", &arr[i]);
+        arr[i] = arr[i] * arr[i];
+    }
+    printf("Squared Array\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("%d\n", arr[i]); 
+    }
+    return 0;
+}
+                    </pre>
+                    <h2 class="heading">output</h2>
+                    <pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Squared Array
+1
+4
+9
+16
+25  
+                    </pre>
+                <h2 class="heading">Enter an array from user and find maximum and minimum value?</h2>
+                <pre>                   
+#include &lt;stdio.h&gt;
+int main(){
+int arr[10], i, max, min;
+for (i = 0; i < 10; i++)
+{
+    printf("Enter Value of position %d\n", i+1);
+    scanf("%d", &arr[i]);
+}
+max = arr[0];
+min = arr[0];
+for (i = 1; i < 10; i++)
+{
+    if (max < arr[i])
+        max = arr[i];
+    if (min > arr[i])
+        min = arr[i];
+}
+printf("Maximum = %d\nMinimum = %d", max, min);
+return 0;
+}                
+</pre>
+
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+1
+Enter Value of position 3
+2
+Enter Value of position 4
+3
+Enter Value of position 5
+4
+Enter Value of position 6
+5
+Enter Value of position 7
+6
+Enter Value of position 8
+7
+Enter Value of position 9
+8
+Enter Value of position 10
+12
+Maximum = 12
+Minimum = 1
+</pre>
+<h2 class="heading"> Enter an array from user and find the k-th smallest value?</h2>
+<pre>
+    #include &lt;stdio.h&gt;
+     void sort(int arr[], int size){
+    int i , j;
+    for (i = 0; i < size; i++){
+        for (j = i+1; j < size; j++){
+            if (arr[i] > arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+        int main(){
+            int i, arr[10], k;
+            for (i = 0; i < 10; i++){
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+        
+            printf("Enter K-th Value\n");
+            scanf("%d", &k);
+            
+            if (k >= 1 && k <=10){
+                sort(arr, 10);
+                printf("K-th Smallest Value of given list is %d", arr[k-1]);
+            }
+            else
+                printf("We have only 10 element list");
+            return 0;
+        }
+</pre>
+<h2 class="heading">Output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+5
+Enter Value of position 5
+7
+Enter Value of position 6
+5
+Enter Value of position 7
+8
+Enter Value of position 8
+9
+Enter Value of position 9
+10
+Enter Value of position 10
+11
+Enter K-th Value
+9
+K-th Smallest Value of given list is 10
+</pre>
+<h2 class="heading">Enter an array from user and add all values ?</h2>
+<pre>
+    #include &lt;stdio.h&gt;
+
+        int main(){
+            int arr[10], i, sum = 0;
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            for (i = 0; i < 10; i++)
+            {
+                sum += arr[i];
+            }
+            printf("Sum of Values is %d", sum);
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Enter Value of position 6
+6
+Enter Value of position 7
+7
+Enter Value of position 8
+7
+Enter Value of position 9
+8
+Enter Value of position 10
+9
+Sum of Values is 52
+</pre>
+<h2 class="heading">Enter an array from user and find the duplicate values?</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+        void sort(int arr[], int size){
+            int i, j;
+            for (i = 0; i < size; i++){
+                for (j = i+1; j < size; j++){
+                    if (arr[i] > arr[j]){
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+        int main(){
+            int arr[10], i, j, avail = 0;
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            sort(arr, 10);
+            printf("Duplicate Values Are\n");
+            for (i = 0; i < 9; i++)
+            {
+                int count = 1;
+                while (arr[i] ==  arr[i+1]){
+                    count++;
+                    i++;
+                    avail = 1;
+                }
+                if (count > 1){
+                    printf("%d\n", arr[i]);
+                }
+                
+            }
+            
+            if (!avail)
+            {
+                printf("No Duplicate Value Found");
+            }
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+1
+Enter Value of position 3
+1
+Enter Value of position 4
+2
+Enter Value of position 5
+4
+Enter Value of position 6
+3
+Enter Value of position 7
+6
+Enter Value of position 8
+9
+Enter Value of position 9
+77
+Enter Value of position 10
+43
+Duplicate Values Are
+1
+
+</pre>
+<h2 class="heading">Enter an array from user and remove the duplicate values and fill with zero?</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+
+        int main(){
+            int arr[10], i, j;
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            for (i = 0; i < 10; i++)
+            {
+                for (j = i+1; j < 10; j++)
+                {
+                    if (arr[i] == arr[j] && arr[i] != 0)
+                    {
+                        arr[j] = 0;
+                    }
+                }
+            }
+            printf("Required Array\n");
+            for (i = 0; i < 10; i++)
+            {
+                printf("%d\n", arr[i]); 
+            }
+            return 0;
+        }
+</pre>
+
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+1
+Enter Value of position 3
+1
+Enter Value of position 4
+2
+Enter Value of position 5
+3
+Enter Value of position 6
+4
+Enter Value of position 7
+5
+Enter Value of position 8
+6
+Enter Value of position 9
+7
+Enter Value of position 10
+8
+Required Array
+1
+0
+0
+2
+3
+4
+5
+6
+7
+8
+
+</pre>
+<h2 class="heading">Enter an array from user and count the duplicate values?</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+        void sort(int arr[], int size){
+            int i, j;
+            for (i = 0; i < size; i++){
+                for (j = i+1; j < size; j++){
+                    if (arr[i] > arr[j]){
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+        int main(){
+            int arr[10], i, count, avail = 0;
+            for (i = 0; i < 10; i++){
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            sort(arr, 10);
+            printf("Duplicate Values\n");
+            for (i = 0; i < 10; i++)
+            {
+                count = 1;
+                while (arr[i] ==  arr[i+1]){
+                    count++;
+                    i++;
+                    avail = 1;
+                }
+                if (count > 1){
+                    printf("%d is present %d times\n", arr[i], count);
+                }
+                
+            }
+            if (!avail){
+                printf("No Duplicate Values Found");
+            }
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+1
+Enter Value of position 3
+1
+Enter Value of position 4
+2
+Enter Value of position 5
+3
+Enter Value of position 6
+4
+Enter Value of position 7
+5
+Enter Value of position 8
+6
+Enter Value of position 9
+7
+Enter Value of position 10
+8
+Duplicate Values
+1 is present 3 times
+</pre>
+<h2 class="heading"> Enter an array from user and print all possible combinations of the elements?</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+
+        int main(){
+            int arr[] = {1, 1, 4, 1, 5};
+        
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = i+1; j < 5; j++)
+                {
+                    printf("%d %d\n", arr[i], arr[j]);
+                }
+            }
+            
+        
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+1 1
+1 4
+1 1
+1 5
+1 4
+1 1
+1 5
+4 1
+4 5
+1 5
+</pre>
+<h2 class="heading">Enter an array from user and print all the palindrome numbers?</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+
+        int isPallindrome(int num){
+            int rev = 0, n = num;
+            while (num != 0)
+            {
+                rev = (rev*10) + (num%10);
+                num /= 10;
+            }
+            if (n == rev)
+            {
+                return 1;
+            }
+            return 0;
+        }
+        
+        int main(){
+            int arr[10], i;
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            for (i = 0; i < 10; i++)
+            {        
+                if (isPallindrome(arr[i]))
+                    printf("%d is Pallindrome\n", arr[i]);  
+            }
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+12
+Enter Value of position 2
+121
+Enter Value of position 3
+33
+Enter Value of position 4
+6
+Enter Value of position 5
+7
+Enter Value of position 6
+8
+Enter Value of position 7
+9
+Enter Value of position 8
+100
+Enter Value of position 9
+88
+Enter Value of position 10
+32
+121 is Pallindrome
+33 is Pallindrome
+6 is Pallindrome
+7 is Pallindrome
+8 is Pallindrome
+9 is Pallindrome
+88 is Pallindrome
+</pre>
+<h2 class="heading">Enter two arrays from the user and check they are same or not?</h2>
+<pre>
+    #include&le;stdio.h&gt;
+
+        void Selectionsort(int arr[], int size){
+            int temp, i, j;
+            for (i = 0; i < size; i++)
+            {
+                for (j = i+1; j < size; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+                
+            }
+        }
+        
+        int main(){
+            int arr[10],arr2[10], i;
+            printf("Enter Elements of First Array\n");
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            printf("Enter Elements of Second Array\n");
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr2[i]);
+            }
+            
+            Selectionsort(arr, 10);
+            Selectionsort(arr2, 10);
+        
+            for (i = 0; i < 10; i++)
+            {
+                if (arr[i] != arr2[i])
+                {
+                    printf("Both arrays are not same");
+                    break;
+                }  
+            }
+            if (i == 10)
+            {
+                printf("Both arrays are same");
+            }
+            
+        
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Elements of First Array
+Enter Value of position 1
+11
+Enter Value of position 2
+22
+Enter Value of position 3
+33
+Enter Value of position 4
+44
+Enter Value of position 5
+55
+Enter Value of position 6
+66
+Enter Value of position 7
+77
+Enter Value of position 8
+88
+Enter Value of position 9
+99
+Enter Value of position 10
+100
+Enter Elements of Second Array
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Enter Value of position 6
+6
+Enter Value of position 7
+7
+Enter Value of position 8
+8
+Enter Value of position 9
+9
+Enter Value of position 10
+10
+Both arrays are not same
+</pre>
+<h2 class="heading">Merge the two sorted arrays into one array but in sorted order?</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+
+        int* merge(int arr1[], int s1, int arr2[], int s2, int arr[], int size){
+            int i = 0, j = 0, k = 0;
+            while (k < size)
+            {
+                if ((arr1[i] < arr2[j] || j == s2) && i != s1){
+                    arr[k] = arr1[i];
+                    k++;
+                    i++;
+                }
+                else{
+                    arr[k] = arr2[j];
+                    k++;
+                    j++;
+                }
+            }
+            return arr;
+        }
+        
+        int main(){
+            int arr1[5], arr2[5], arr[10],i;
+            printf("Enter First Array\n");
+            for (i = 0; i < 5; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr1[i]);
+            }
+            printf("Enter Second Array\n");
+            for (i = 0; i < 5; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr2[i]);
+            }
+        
+            merge(arr1, 5, arr2, 5, arr, 10);
+            printf("Printing Merged Array\n");
+            for (i = 0; i < 10; i++)
+            {
+                  printf("Value at position %d is %d\n", i+1, arr[i]);
+            }
+            return 0; 
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+ Enter First Array
+Enter Value of position 1
+11
+Enter Value of position 2
+2
+Enter Value of position 3
+6
+Enter Value of position 4
+8
+Enter Value of position 5
+4
+Enter Second Array
+Enter Value of position 1
+9
+Enter Value of position 2
+66
+Enter Value of position 3
+44
+Enter Value of position 4
+54
+Enter Value of position 5
+63
+Printing Merged Array
+Value at position 1 is 9
+Value at position 2 is 11
+Value at position 3 is 2
+Value at position 4 is 6
+Value at position 5 is 8
+Value at position 6 is 4
+Value at position 7 is 66
+Value at position 8 is 44
+Value at position 9 is 54
+Value at position 10 is 63
+</pre>
+<h2 class="heading">Find the local minima in the array? (An element in an array is a local minima if it less than the element after it, and the element before it)</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+
+        int main(){
+            int arr[10], i;
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            
+            for (i = 1; i < 9; i++)
+            {
+                if(arr[i] < arr[i-1] && arr[i] < arr[i+1])
+                    printf("%d is local minima\n", arr[i]);
+            }
+                
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Enter Value of position 6
+66
+Enter Value of position 7
+7
+Enter Value of position 8
+8
+Enter Value of position 9
+9
+Enter Value of position 10
+100
+7 is local minima
+</pre>
+<h2 class="heading">Find the local maxima in the array? (An element in an array is a local maxima if it greater than the element after it, and the element before it)</h2>
+<pre>
+    #include&lt;stdio.h&gt;
+
+        int main(){
+            int arr[10], i;
+            for (i = 0; i < 10; i++)
+            {
+                printf("Enter Value of position %d\n", i+1);
+                scanf("%d", &arr[i]);
+            }
+            
+            for (i = 1; i < 9; i++)
+            {
+                if(arr[i] > arr[i-1] && arr[i] > arr[i+1])
+                    printf("%d is local maxima\n", arr[i]);
+            }
+                
+            return 0;
+        }
+</pre>
+<h2 class="heading">output</h2>
+<pre>
+Enter Value of position 1
+1
+Enter Value of position 2
+2
+Enter Value of position 3
+3
+Enter Value of position 4
+4
+Enter Value of position 5
+5
+Enter Value of position 6
+6
+Enter Value of position 7
+88
+Enter Value of position 8
+99
+Enter Value of position 9
+100
+Enter Value of position 10
+66
+100 is local maxima
+
+</pre>
+                </div>
+            </div>
+        </div>
+</body>
+</head>
+</html>

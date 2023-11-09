@@ -1,0 +1,936 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!--Complete karo -->
+        <div class="nav-bar"></div> 
+
+
+        <div class="d-flex h-100">
+            <div id="leftcontainer" class="h-100">
+                <ul>
+                    <a href="searching.html"><li>searching and sorting</li></a>
+                   <a href="array.html"><li>arrays</li></a>
+                   <a href="#"><li>trees</li></a>
+                   <a href="#"><li>graphs</li></a>
+                   <a href="stack.html"><li>stack</li></a>
+                   <a href="string.html"><li>strings</li></a>
+                   <a href="2d.html"><li>2d-arrays</li></a>
+                   <a href="linked list.html"><li>linked list</li></a>
+                   <a href="queue.html"><li>Queue</li></a>
+                   <a href="recursion.html"><li>Recursion</li></a>
+                </ul>
+            </div>
+            <div id="rightcontainer" class="w-100">
+                <div class="programs w-100" id="2d-Arrays">
+                    <h2 class="heading t-head">queue</h2>
+                 <h2 class="heading"> IMPLEMENT THE OPERATIONS OF SIMPLE QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</h2>   
+                 <pre>
+                    #include&lt;stdio.h&gt;
+                        #include&lt;conio.h&gt;
+                        
+                        int isEmpty(int front, int rear)
+                        {
+                            if (front == rear)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int isFull(int rear, int size)
+                        {
+                            if (rear == size)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int enqueue(int queue[], int size, int rear, int value)
+                        {
+                            if (isFull(rear, size))
+                            {
+                                return -1;
+                            }
+                            rear++;
+                            queue[rear] = value;
+                            return rear;
+                        }
+                        
+                        int dequeue(int front, int rear)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            front++;
+                            return front;
+                        }
+                        
+                        int peek(int front, int rear)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            return front+1;
+                        }
+                        
+                        int main()
+                        {
+                            int queue[10], i = -1, j = -1, check, val;
+                            char choice;
+                            do
+                            {
+                                printf("Press 1: For Enqueue\nPress 2: For Dequeue\nPress 3: Peek the Queue\nPress 4: Exit\n\n");
+                                choice = getch();
+                                if (choice == '1')
+                                {
+                                    printf("Enter Value to insert\n");
+                                    scanf("%d", &val);
+                                    check = enqueue(queue, 10, i, val);
+                                    if (check == -1)
+                                        printf("Queue is full\n");
+                                    else
+                                    {
+                                        printf("%d inserted to Queue\n", val);
+                                        i = check;
+                                    }
+                                }
+                                else if (choice == '2')
+                                {
+                                    check = dequeue(j, i);
+                                    if (check == -1)
+                                        printf("Queue is Empty\n");
+                                    else
+                                    {
+                                        printf("Dequeue Successfull\n");
+                                        j = check;
+                                    }
+                                }
+                                else if (choice == '3')
+                                {
+                                    check = peek(j, i);
+                                    if (check == -1)
+                                    {
+                                        printf("Queue is Empty");
+                                    }
+                                    else
+                                    {
+                                        printf("%d is the frontmost element of Queue\n", queue[check]);
+                                    }
+                                }
+                                else if (choice == '4')
+                                    printf("Exiting From Program.....\n");
+                                else
+                                    printf("Invalid Menu Option\n");
+                            } while (choice != '4');
+                        
+                            return 0;
+                        }
+                 </pre>
+                 <h2 class="heading">output</h2>
+                 <pre>
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Enter Value to insert
+12
+12 inserted to Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Dequeue Successfull
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Queue is EmptyPress 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Exiting From Program.....
+                 </pre>
+                 <h2 class="heading">IMPLEMENT THE OPERATIONS OF SIMPLE QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</h2>
+                 <pre>
+                    #include&lt;stdio.h&gt;
+                    #include&lt;conio.h&gt;
+                    #include&lt;string.h&gt;
+                        
+                        int isEmpty(int front, int rear)
+                        {
+                            if (front == rear)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int isFull(int rear, int size)
+                        {
+                            if (rear == size)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int enqueue(char queue[10][20], int size, int rear, char value[])
+                        {
+                            if (isFull(rear, size))
+                            {
+                                return -1;
+                            }
+                            rear++;
+                            strcpy(queue[rear], value);
+                            return rear;
+                        }
+                        
+                        int dequeue(int front, int rear)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            front++;
+                            return front;
+                        }
+                        
+                        int peek(int front, int rear)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            return front+1;
+                        }
+                        
+                        int main()
+                        {
+                            char queue[10][20];
+                            int i = -1, j = -1, check;
+                            char choice, str[20];
+                            do
+                            {
+                                printf("Press 1: For Enqueue\nPress 2: For Dequeue\nPress 3: Peek the Queue\nPress 4: Exit\n\n");
+                                choice = getch();
+                                if (choice == '1')
+                                {
+                                    printf("Enter String to insert\n");
+                                    gets(str);
+                                    check = enqueue(queue, 10, i, str);
+                                    if (check == -1)
+                                        printf("Queue is full\n");
+                                    else
+                                    {
+                                        printf("%s inserted to Queue\n", str);
+                                        i = check;
+                                    }
+                                }
+                                else if (choice == '2')
+                                {
+                                    check = dequeue(j, i);
+                                    if (check == -1)
+                                        printf("Queue is Empty\n");
+                                    else
+                                    {
+                                        printf("Dequeue Successfull\n");
+                                        j = check;
+                                    }
+                                }
+                                else if (choice == '3')
+                                {
+                                    check = peek(j, i);
+                                    if (check == -1)
+                                    {
+                                        printf("Queue is Empty");
+                                    }
+                                    else
+                                    {
+                                        printf("%s is the frontmost element of Queue\n", queue[check]);
+                                    }
+                                }
+                                else if (choice == '4')
+                                    printf("Exiting From Program.....\n");
+                                else
+                                    printf("Invalid Menu Option\n");
+                            } while (choice != '4');
+                        
+                            return 0;
+                        }
+                 </pre>
+                 <h2 class="heading">output</h2>
+                 <pre>
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Enter String to insert
+a  
+a inserted to Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+a is the frontmost element of Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Dequeue Successfull
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Exiting From Program.....
+                 </pre>
+                 <h2 class="heading">IMPLEMENT THE OPERATIONS OF QUEUE DYNAMICALLY OF INTEGERS (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</h2>
+                 <pre>
+                    #include&lt;stdio.h&gt;
+                        #include&lt;stdlib.h&gt;
+                        #include&lt;conio.h&gt;
+                        struct Node
+                        {
+                            int data;
+                            struct Node *next;
+                        };
+                        typedef struct Node node;
+                        
+                        int isEmpty(node *front)
+                        {
+                            if (front == NULL)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int isFull(node *ptr)
+                        {
+                            if (ptr == NULL)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int *enqueue(node **rear, node **front, int value)
+                        {
+                            node *nn;
+                            nn = (node *)malloc(sizeof(node));
+                            if (isFull(nn))
+                            {
+                                return NULL;
+                            }
+                            nn->data = value;
+                            nn->next = NULL;
+                            if (isEmpty(*front))
+                            {
+                                *front = nn;
+                            }
+                            else
+                            {
+                                (*rear)->next = nn;
+                            }
+                            *rear = nn;
+                            return &(nn->data);
+                        }
+                        
+                        int dequeue(node **rear, node **front)
+                        {
+                            node *temp;
+                            if (isEmpty(*front))
+                            {
+                                return 0;
+                            }
+                            temp = (*front);
+                            if ((*front) == (*rear))
+                            {
+                                *front = *rear = NULL;
+                            }
+                            else{
+                                (*front) = temp -> next;
+                            }
+                            free(temp);
+                            return 1;
+                        }
+                        
+                        int *peek(node *front)
+                        {
+                            if (isEmpty(front))
+                            {
+                                return NULL;
+                            }
+                            return &(front->data);
+                        }
+                        
+                        int main()
+                        {
+                            node *front = NULL, *rear = NULL;
+                            int val;
+                            char choice;
+                        
+                            do
+                            {
+                                printf("Press 1: For Enqueue\nPress 2: For Dequeue\nPress 3: Peek the Queue\nPress 4: Exit\n\n");
+                                choice = getch();
+                                if (choice == '1')
+                                {
+                                    printf("Enter Value to insert\n");
+                                    scanf("%d", &val);
+                        
+                                    if (enqueue(&rear, &front, val) == NULL)
+                                        printf("Queue is full\n");
+                                    else
+                                    {
+                                        printf("%d inserted to Queue\n", val);
+                                    }
+                                }
+                                else if (choice == '2')
+                                {
+                                    if (dequeue(&rear, &front))
+                                    {
+                                        printf("Dequeue Successfull\n");
+                                    }
+                                    else
+                                    {
+                                        printf("Queue is Empty\n");
+                                    }
+                                }
+                                else if (choice == '3')
+                                {
+                                    if (peek(front) == NULL)
+                                    {
+                                        printf("Queue is Empty\n");
+                                    }
+                                    else
+                                    {
+                                        printf("%d is the frontmost element of Queue\n", *peek(front));
+                                    }
+                                }
+                                else if (choice == '4')
+                                    printf("Exiting From Program.....\n");
+                                else
+                                    printf("Invalid Menu Option\n");
+                        
+                            } while (choice != '4');
+                        
+                            while (front != NULL)
+                            {
+                                dequeue(&rear, &front);
+                            }
+                        
+                            return 0;
+                        }
+                 </pre>
+                 <h2 class="heading">ouput</h2>
+                 <pre>
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Enter Value to insert
+12
+12 inserted to Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+12 is the frontmost element of Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Dequeue Successfull
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Queue is Empty
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Exiting From Program.....
+                 </pre>
+                 <h2 class="heading">IMPLEMENT THE OPERATIONS OF QUEUE DYNAMICALLY OF STRING (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</h2>
+                 <pre>
+                    #include&lt;stdio.h&gt;
+                        #include&lt;stdlib.h&gt;
+                        #include&lt;conio.h&gt;
+                        #include&lt;string.h&gt;
+                        struct Node
+                        {
+                            char data[20];
+                            struct Node *next;
+                        };
+                        typedef struct Node node;
+                        
+                        int isEmpty(node *front)
+                        {
+                            if (front == NULL)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int isFull(node *ptr)
+                        {
+                            if (ptr == NULL)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        char *enqueue(node **rear, node **front, char value[])
+                        {
+                            node *nn;
+                            nn = (node *)malloc(sizeof(node));
+                            if (isFull(nn))
+                            {
+                                return NULL;
+                            }
+                            strcpy(nn->data, value);
+                            nn->next = NULL;
+                            if (isEmpty(*front))
+                            {
+                                *front = nn;
+                            }
+                            else
+                            {
+                                (*rear)->next = nn;
+                            }
+                            *rear = nn;
+                            return (nn->data);
+                        }
+                        
+                        int dequeue(node **rear, node **front)
+                        {
+                            node *temp;
+                            if (isEmpty(*front))
+                            {
+                                return 0;
+                            }
+                            temp = (*front);
+                            if ((*front) == (*rear))
+                            {
+                                *front = *rear = NULL;
+                            }
+                            else{
+                                (*front) = temp -> next;
+                            }
+                            free(temp);
+                            return 1;
+                        }
+                        
+                        char *peek(node *front)
+                        {
+                            if (isEmpty(front))
+                            {
+                                return NULL;
+                            }
+                            return (front->data);
+                        }
+                        
+                        int main()
+                        {
+                            node *front = NULL, *rear = NULL;
+                            char choice, val[20];
+                        
+                            do
+                            {
+                                printf("Press 1: For Enqueue\nPress 2: For Dequeue\nPress 3: Peek the Queue\nPress 4: Exit\n\n");
+                                choice = getch();
+                                if (choice == '1')
+                                {
+                                    printf("Enter Value to insert\n");
+                                    gets(val);
+                        
+                                    if (enqueue(&rear, &front, val) == NULL)
+                                        printf("Queue is full\n");
+                                    else
+                                    {
+                                        printf("%s inserted to Queue\n", val);
+                                    }
+                                }
+                                else if (choice == '2')
+                                {
+                                    if (dequeue(&rear, &front))
+                                    {
+                                        printf("Dequeue Successfull\n");
+                                    }
+                                    else
+                                    {
+                                        printf("Queue is Empty\n");
+                                    }
+                                }
+                                else if (choice == '3')
+                                {
+                                    if (peek(front) == NULL)
+                                    {
+                                        printf("Queue is Empty\n");
+                                    }
+                                    else
+                                    {
+                                        printf("%s is the frontmost element of Queue\n", peek(front));
+                                    }
+                                }
+                                else if (choice == '4')
+                                    printf("Exiting From Program.....\n");
+                                else
+                                    printf("Invalid Menu Option\n");
+                        
+                            } while (choice != '4');
+                        
+                            while (front != NULL)
+                            {
+                                dequeue(&rear, &front);
+                            }
+                        
+                            return 0;
+                        }
+                 </pre>
+                 <h2 class="heading">output</h2>
+                 <pre>
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Enter Value to insert
+                    a
+                    a inserted to Queue
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    a is the frontmost element of Queue
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Dequeue Successfull
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Queue is Empty
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Exiting From Program.....   
+                 </pre>
+                 <h2 class="heading">IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</h2>
+                 <pre>
+                    #include&lt;stdio.h&gt;
+                        #include&lt;conio.h&gt;
+                        
+                        int isEmpty(int front, int rear)
+                        {
+                            if (front == rear)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int isFull(int rear, int front, int size)
+                        {
+                            if (front == rear+1 || (front == -1 && rear == size-1))
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int enqueue(int queue[], int size, int rear, int front, int value)
+                        {
+                            if (isFull(rear, front, size))
+                            {
+                                return -1;
+                            }
+                            rear++;
+                            rear %= size;
+                            queue[rear] = value;
+                            return rear;
+                        }
+                        
+                        int dequeue(int front, int rear, int size)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            front++;
+                            front %= size;
+                            return front;
+                        }
+                        
+                        int peek(int front, int rear, int size)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            return ((front+1)%size);
+                        }
+                        
+                        int main()
+                        {
+                            int queue[10], rear = -1, front = -1, check, val;
+                            char choice;
+                            do
+                            {
+                                printf("Press 1: For Enqueue\nPress 2: For Dequeue\nPress 3: Peek the Queue\nPress 4: Exit\n\n");
+                                choice = getch();
+                                if (choice == '1')
+                                {
+                                    printf("Enter Value to insert\n");
+                                    scanf("%d", &val);
+                                    check = enqueue(queue, 10, rear, front, val);
+                                    if (check == -1)
+                                        printf("Queue is full\n");
+                                    else
+                                    {
+                                        printf("%d inserted to Queue\n", val);
+                                        rear = check;
+                                    }
+                                }
+                                else if (choice == '2')
+                                {
+                                    check = dequeue(front, rear, 10);
+                                    if (check == -1)
+                                        printf("Queue is Empty\n");
+                                    else
+                                    {
+                                        printf("Dequeue Successfull\n");
+                                        front = check;
+                                    }
+                                }
+                                else if (choice == '3')
+                                {
+                                    check = peek(front, rear, 10);
+                                    if (check == -1)
+                                    {
+                                        printf("Queue is Empty");
+                                    }
+                                    else
+                                    {
+                                        printf("%d is the frontmost element of Queue\n", queue[check]);
+                                    }
+                                }
+                                else if (choice == '4')
+                                    printf("Exiting From Program.....\n");
+                                else
+                                    printf("Invalid Menu Option\n");
+                            } while (choice != '4');
+                        
+                            return 0;
+                        }
+                 </pre>
+                 <h2 class="heading">output</h2>
+                 <pre>
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Enter Value to insert
+23
+23 inserted to Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+23 is the frontmost element of Queue
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Dequeue Successfull
+Press 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Queue is EmptyPress 1: For Enqueue
+Press 2: For Dequeue
+Press 3: Peek the Queue
+Press 4: Exit
+
+Exiting From Program.....
+                 </pre>
+                 <h2 class="heading"> IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)</h2>
+                 <pre>
+                    #include&lt;stdio.h&gt;
+                        #include&lt;conio.h&gt;
+                        #include <string.h>
+                        
+                        int isEmpty(int front, int rear)
+                        {
+                            if (front == rear)
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int isFull(int rear, int front, int size)
+                        {
+                            if (front == rear+1 || (front == -1 && rear == size-1))
+                            {
+                                return 1;
+                            }
+                            return 0;
+                        }
+                        
+                        int enqueue(char queue[10][20], int size, int rear, int front, char value[])
+                        {
+                            if (isFull(rear, front, size))
+                            {
+                                return -1;
+                            }
+                            rear++;
+                            rear %= size;
+                            strcpy(queue[rear], value);
+                            return rear;
+                        }
+                        
+                        int dequeue(int front, int rear, int size)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            front++;
+                            front %= size;
+                            return front;
+                        }
+                        
+                        int peek(int front, int rear, int size)
+                        {
+                            if (isEmpty(front, rear))
+                            {
+                                return -1;
+                            }
+                            return ((front+1)%size);
+                        }
+                        
+                        int main()
+                        {
+                            int rear = -1, front = -1, check;
+                            char queue[10][20], val[20];
+                            char choice;
+                            do
+                            {
+                                printf("Press 1: For Enqueue\nPress 2: For Dequeue\nPress 3: Peek the Queue\nPress 4: Exit\n\n");
+                                choice = getch();
+                                if (choice == '1')
+                                {
+                                    printf("Enter Value to insert\n");
+                                    gets(val);
+                                    check = enqueue(queue, 10, rear, front, val);
+                                    if (check == -1)
+                                        printf("Queue is full\n");
+                                    else
+                                    {
+                                        printf("%s inserted to Queue\n", val);
+                                        rear = check;
+                                    }
+                                }
+                                else if (choice == '2')
+                                {
+                                    check = dequeue(front, rear, 10);
+                                    if (check == -1)
+                                        printf("Queue is Empty\n");
+                                    else
+                                    {
+                                        printf("Dequeue Successfull\n");
+                                        front = check;
+                                    }
+                                }
+                                else if (choice == '3')
+                                {
+                                    check = peek(front, rear, 10);
+                                    if (check == -1)
+                                    {
+                                        printf("Queue is Empty");
+                                    }
+                                    else
+                                    {
+                                        printf("%s is the frontmost element of Queue\n", queue[check]);
+                                    }
+                                }
+                                else if (choice == '4')
+                                    printf("Exiting From Program.....\n");
+                                else
+                                    printf("Invalid Menu Option\n");
+                            } while (choice != '4');
+                        
+                            return 0;
+                        }
+                 </pre>
+                 <h2 class="heading">output</h2>
+                 <pre>
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Enter Value to insert
+                    a
+                    a inserted to Queue
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    a is the frontmost element of Queue
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Dequeue Successfull
+                    Press 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Queue is EmptyPress 1: For Enqueue
+                    Press 2: For Dequeue
+                    Press 3: Peek the Queue
+                    Press 4: Exit
+                    
+                    Exiting From Program..... 
+                 </pre>
+                 

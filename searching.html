@@ -1,0 +1,295 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!--Complete karo -->
+        <div class="nav-bar"></div> 
+
+
+        <div class="d-flex h-100">
+            <div id="leftcontainer" class="h-100">
+                <ul>
+                    <a href="searching.html"><li>searching and sorting</li></a>
+                   <a href="array.html"><li>arrays</li></a>
+                   <a href="#"><li>trees</li></a>
+                   <a href="#"><li>graphs</li></a>
+                   <a href="stack.html"><li>stack</li></a>
+                   <a href="string.html"><li>strings</li></a>
+                   <a href="2d.html"><li>2d-arrays</li></a>
+                   <a href="linked list.html"><li>linked list</li></a>
+                   <a href="queue.html"><li>Queue</li></a>
+                   <a href="recursion.html"><li>Recursion</li></a>
+                </ul>
+            </div>
+            <div id="rightcontainer" class="w-100">
+                <div class="programs w-100" id="searching">
+                    <h2 class="heading t-head">Searching</h2>
+                    <h2 class="heading"> ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION.</h2>
+                        <pre>
+                        #include&lt;stdio.h&gt;
+
+                            int linearSearch(int arr[], int n, int key) {
+                                for (int i = 0; i < n; i++) {
+                                    if (arr[i] == key) {
+                                        return i;
+                                    }
+                                }
+                                return -1; 
+                            }
+                            
+                            int main() {
+                                int arr[10], i, key;
+                            
+                                for (i = 0; i < 10; i++)
+                                {
+                                    printf("Enter Value of position %d\n", i+1);
+                                    scanf("%d", &arr[i]);
+                                }
+                            
+                                printf("Enter Value to be searched\n");
+                                scanf("%d", &key);
+                                int result = linearSearch(arr, 10, key);
+                            
+                                if (result == -1) {
+                                    printf("Element %d not found in the array.\n", key);
+                                } else {
+                                    printf("Element %d found at position %d.\n", key, result+1);
+                                }
+                            
+                                return 0;
+                            }
+                        </pre>
+                        <h2 class="heading">output</h2>
+                        <pre>
+Enter Value of position 1
+22
+Enter Value of position 2
+12
+Enter Value of position 3
+32
+Enter Value of position 4
+2
+Enter Value of position 5
+12
+Enter Value of position 6
+32
+Enter Value of position 7
+13
+Enter Value of position 8
+55
+Enter Value of position 9
+54
+Enter Value of position 10
+34
+Enter Value to be searched
+12
+Element 12 found at position 2.
+                        </pre>
+                        <h2 class="heading">ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.</h2>
+                        <pre>
+                            #include&lt;stdio.h&gt;
+
+                                int linearSearch(int arr[], int key, int index, int n) {
+                                    if (index >= n)
+                                        return -1;
+                                    
+                                    if (arr[index] == key)
+                                        return index;
+                                
+                                    linearSearch(arr, key, index + 1, n);
+                                }
+                                int main(){
+                                    int arr[10], i, key;
+                                
+                                    for (i = 0; i < 10; i++)
+                                    {
+                                        printf("Enter Value of position %d\n", i+1);
+                                        scanf("%d", &arr[i]);
+                                    }
+                                
+                                    printf("Enter Value to be searched\n");
+                                    scanf("%d", &key);
+                                    int result = linearSearch(arr, key, 0, 10);
+                                
+                                    if (result == -1) {
+                                        printf("Element %d not found in the array.\n", key);
+                                    } else {
+                                        printf("Element %d found at position %d.\n", key, result+1);
+                                    }    
+                                    return 0;
+                                }
+                        </pre>
+                        <h2 class="heading">output</h2>
+                        <pre>
+                            Enter Value of position 1
+                            1
+                            Enter Value of position 2
+                            22
+                            Enter Value of position 3
+                            32
+                            Enter Value of position 4
+                            45
+                            Enter Value of position 5
+                            12
+                            Enter Value of position 6
+                            65
+                            Enter Value of position 7
+                            78
+                            Enter Value of position 8
+                            55
+                            Enter Value of position 9
+                            88
+                            Enter Value of position 10
+                            67
+                            Enter Value to be searched
+                            78
+                            Element 78 found at position 7.   
+                        </pre>
+                        <h2 class="heading">ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH ITERATION.</h2>
+                        <pre>
+                            #include&lt;stdio.h&gt;
+
+                                int binarySearch(int arr[], int n, int key) {
+                                    int l = 0, u = n-1, mid;
+                                    while(l<u)
+                                    {
+                                        mid = (u-l)/2;
+                                        if (arr[mid] == key)
+                                        {
+                                            return mid;
+                                        }
+                                        else if(arr[mid] > key){
+                                            u = mid-1;
+                                        }
+                                        else{
+                                            l = mid+1;
+                                        }
+                                    }
+                                    return -1; 
+                                }
+                                
+                                int main() {
+                                    int arr[10], i, key;
+                                    
+                                    for (i = 0; i < 10; i++)
+                                    {
+                                        printf("Enter Value of position %d\n", i+1);
+                                        scanf("%d", &arr[i]);
+                                    }
+                                
+                                    printf("Enter Value to be searched\n");
+                                    scanf("%d", &key);
+                                    int result = binarySearch(arr, 10, key);
+                                
+                                    if (result == -1) {
+                                        printf("Element %d not found in the array.\n", key);
+                                    } else {
+                                        printf("Element %d found at position %d.\n", key, result+1);
+                                    }
+                                
+                                    return 0;
+                                }
+                        </pre>
+                        <h2 class="heading">ouput</h2>
+                        <pre>
+                            Enter Value of position 1
+                            12
+                            Enter Value of position 2
+                            32
+                            Enter Value of position 3
+                            34
+                            Enter Value of position 4
+                            54
+                            Enter Value of position 5
+                            65
+                            Enter Value of position 6
+                            78
+                            Enter Value of position 7
+                            77
+                            Enter Value of position 8
+                            98
+                            Enter Value of position 9
+                            78
+                            Enter Value of position 10
+                            66
+                            Enter Value to be searched
+                            65
+                            Element 65 found at position 5.  
+                        </pre>
+                        <h2 class="heading">ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION.</h2>
+                        <pre>
+                            #include&lt;stdio.h&gt;
+
+                                int binarySearch(int arr[], int l, int u, int key) {
+                                    int mid = (u - l)/2;
+                                    if (l > u) 
+                                    {
+                                        return -1;
+                                    }
+                                    if (arr[mid] == key)
+                                    {
+                                        return mid;
+                                    }
+                                    else if (arr[mid] > key){
+                                        u = mid-1;
+                                    }
+                                    else{
+                                        l = mid+1;
+                                    }
+                                    
+                                    binarySearch(arr, l, u, key); 
+                                }
+                                
+                                int main() {
+                                    int arr[10], i, key;
+                                    
+                                    for (i = 0; i < 10; i++)
+                                    {
+                                        printf("Enter Value of position %d\n", i+1);
+                                        scanf("%d", &arr[i]);
+                                    }
+                                
+                                    printf("Enter Value to be searched\n");
+                                    scanf("%d", &key);
+                                    int result = binarySearch(arr, 0, 10, key);
+                                
+                                    if (result == -1) {
+                                        printf("Element %d not found in the array.\n", key);
+                                    } else {
+                                        printf("Element %d found at position %d.\n", key, result+1);
+                                    }
+                                
+                                    return 0;
+                                }
+                        </pre>
+                        <h2 class="heading">output</h2>
+                        <pre>
+Enter Value of position 1
+12
+Enter Value of position 2
+23
+Enter Value of position 3
+43
+Enter Value of position 4
+34
+Enter Value of position 5
+55
+Enter Value of position 6
+66
+Enter Value of position 7
+78
+Enter Value of position 8
+98
+Enter Value of position 9
+88
+Enter Value of position 10
+67
+Enter Value to be searched
+66
+Element 66 found at position 6.
+                        </pre>
+                        
